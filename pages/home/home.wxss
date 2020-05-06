@@ -1,5 +1,4 @@
 /* pages/home/home.wxss */
-.title{
-  color:red;
-  background-color:#bfa;
+.math {
+  background:#bfa;
 }
