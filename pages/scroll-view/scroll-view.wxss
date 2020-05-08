@@ -1,0 +1,22 @@
+/* pages/scroll-view/scroll-view.wxss */
+.container1 {
+  background-color: purple;
+  white-space: nowrap;
+  margin-bottom:30px;
+}
+.item1 {
+   width:100px;
+   height:100px;
+   background-color: red;
+   margin:10px;
+   display: inline-block;
+}
+.container2 {
+  background-color: orange;
+  height:200px;
+}
+.item2 {
+  height:100px;
+  background-color: blue;
+  margin:10px;
+}

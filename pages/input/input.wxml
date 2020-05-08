@@ -1,0 +1,29 @@
+<!--pages/input/input.wxml-->
+<!-- 1. input的基本使用 -->
+<input/>
+
+<!-- 2.value:input中的默认值 -->
+<input value="啦啦啦"></input>
+
+<!-- 3.type：决定键盘类型（文本输入键盘text/数字number/身份证idcard/带小数点的数字digit） -->
+
+<input type="text" placeholder="文本输入键盘"></input>
+<input type="number" placeholder="数字输入键盘"></input>
+<input type="idcart" placeholder="身份证输入键盘"></input>
+<input type="digit" placeholder="带小数点的数字输入键盘"></input>
+
+<!-- 4.password:是否是密码类型 -->
+<input placeholder="密码类型" password></input>
+
+<!-- 5.input:绑定事件
+    bindinput 输入内容时触发
+    bindfocus 获取焦点时触发
+    bindblur  失去焦点时触发
+ -->
+<input bindinput="handleInput"
+       bindfocus="handleFocus"
+       bindblur="handleBlur"
+       placeholder="监听输入框事件"
+       confirm-hold
+       confirm-type="search"></input>
+

@@ -1,0 +1,25 @@
+<!--pages/text/text.wxml-->
+<text>pages/text/text.wxml\n</text>
+
+<!-- 1.text组件的基本使用 -->
+<text>Hello World\n</text>
+<text>你好小程序\n</text>
+
+<!-- 2.selectable: true -->
+<!-- 默认情况下text中的文本长按是不能选中的 -->
+<!-- <text selectable="{{true}}">我可以长按被选中(在真机上可以被选中\n)</text> -->
+<text selectable>我可以长按被选中(在真机上可以被选中)\n</text><!-- 简写方式不设值默认为true -->
+
+<!-- 3. space：决定文本空格的大小 -->
+<!-- ensp:半个中文字符的大小 -->
+<!-- emsp：一个中文字符的大小 -->
+<text>lyk Ljq\n</text>
+<text space="nbsp">lyk Ljq\n</text>
+<text space="ensp">lyk Ljq\n</text>
+<text space="emsp">lyk Ljq\n</text>
+
+<!-- 4.decode属性：是否解码文本 -->
+<text>5 &gt; 3\n</text>
+<text decode="{{true}}">5 &gt; 3\n</text>
+<text>x &gt; y  且  x &lt; z\n</text>
+<text decode>x &gt; y  且  x &lt; z\n</text>

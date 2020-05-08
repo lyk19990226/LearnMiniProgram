@@ -1,0 +1,26 @@
+<!--pages/view/view.wxml-->
+
+<!-- view的基本使用 -->
+<view class="box">哈哈哈</view>
+<view>呵呵呵</view>
+
+<!-- 1.hover-class:当用户点击组件时，显示的样式 -->
+<!-- 2.hover-stay-time:用户点击后显示样式的时间 -->
+<view class="box1" 
+    hover-class="box1-hover"
+    hover-stay-time="{{10000}}">
+  你点我有不一样的效果哦
+</view>
+
+<!-- 3.hover-stop-propagation：指定是否阻止本节点的祖先节点出现点击态吗， 默认为false 不阻止 -->
+<text>阻止时</text>
+<view class="box2" hover-class="box2-hover" hover-stay-time="{{0}}">
+box2
+  <view class="box3" hover-class="box3-hover" hover-stop-propagation hover-stay-time="{{0}}">box3</view>
+</view>
+
+<text>不阻止时</text>
+<view class="box2" hover-class="box2-hover" hover-stay-time="{{0}}">
+box2
+  <view class="box3" hover-class="box3-hover" hover-stay-time="{{0}}">box3</view>
+</view>
