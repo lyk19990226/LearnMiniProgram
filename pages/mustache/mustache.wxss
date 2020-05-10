@@ -1,0 +1,19 @@
+/* pages/mustache/mustache.wxss */
+input {
+  border:1px black solid;
+  padding:10px;
+  margin:10px;
+}
+.box1 {
+  width:100rpx;
+  height:100rpx;
+  background-color: red;
+}
+.active {
+  border-radius: 50%;
+  background-color: black;
+}
+.map {
+  height: 300px;
+  width:100%;
+}

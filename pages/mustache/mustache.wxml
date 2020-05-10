@@ -1,0 +1,22 @@
+<!--pages/mustache/mustache.wxml-->
+<text>Mustache语法的讲解</text>
+
+<view>{{message}}</view>
+<view>{{firstname + ' ' + lastname}}</view>
+<view>{{firstname}} {{lastname}}</view>
+
+<view>您是一个：{{age >= 18 ? '成年人' : '未成年人'}}</view>
+<input placeholder="请输入年龄" bindinput="handleInput" type="number"></input>
+
+<view>现在的时间是：{{nowTime}}</view>
+
+
+<view>----------------</view>
+<view class="box1 {{isActive ? 'active' : ''}}"></view>
+
+<button size="mini" bindtap="handleSwitchColor">切换状态</button>
+
+
+
+<view>----------------</view>
+<map class="map" longitude="116.11" latitude="39.6"></map>

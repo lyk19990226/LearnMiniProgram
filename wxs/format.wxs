@@ -1,0 +1,14 @@
+function priceFormat (price, number) {
+  var number = number || 2
+  var f_price = parseFloat(price)//如果传入的是一个字符串，我们将它转换为number类型
+  return price.toFixed(number)
+}
+function timer () {
+  var time = Date.now()
+  return time
+}
+
+module.exports = {
+  priceFormat:priceFormat,
+  timer:timer
+}

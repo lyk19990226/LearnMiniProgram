@@ -1,6 +1,12 @@
 {
   "pages": [
-      "pages/home/home",
-      "pages/about/about"
-  ]
+    "pages/wxs/wxs",
+    "pages/template/template",
+    "pages/for/for",
+    "pages/Conditions/wx-if-elif-else",
+    "pages/mustache/mustache",
+    "pages/search/search ",
+    "pages/wxss/wxss"
+  ],
+  "sitemapLocation": "sitemap15.json"
 }

@@ -1,0 +1,12 @@
+/* 导入公共样式 */
+@import '/style/btn.wxss';
+.box1{
+  width:100px;
+  height:100px;
+  background-color: red;
+}
+.box2 {
+  width:200rpx;
+  height:200rpx;
+  background-color: chartreuse;
+}

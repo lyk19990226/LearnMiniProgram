@@ -1,0 +1,39 @@
+<include src="/wxml/start.wxml"/>
+<view>----------- template ----------</view>
+<!-- 之前的时候小程序不支持自定义组件，为了进行代码的复用：template -->
+
+<!-- 模板中包裹的内容，在没有被使用前，是不会进行任何的渲染的 -->
+<template name="contentItem">
+  <button>{{btnText}}</button>
+  <text>{{content}}</text>
+</template>
+<!-- 使用模板，指定is的值，为模板name的值 ；  data指定里面组件的值： data="{{key1:value1,key2:value2,...,keyn:valuen}}-->
+<template is="contentItem" data="{{btnText: '按钮', content: '嘎嘎嘎嘎嘎'}}"/>
+<template is="contentItem" data="{{btnText: '按钮1', content: '啦啦啦啦啦啦'}}"/>
+<template is="contentItem" data="{{btnText: '按钮2', content: '哈哈哈哈哈哈'}}"/>
+<template is="contentItem" data="{{btnText: '按钮3', content: '嘿嘿嘿嘿嘿'}}"/>
+
+
+<!--导入模板  -->
+<!-- include是不能导入模板的 -->
+<import src="/wxml/abc.wxml"/>
+<import src="/wxml/template1.wxml"/>
+
+<template is="abc" data="{{inputContent:'请输入内容'}}"></template> 
+<view>----</view>
+<template is="radio"/>
+<view>-----</view>
+<include src="/wxml/centernav.wxml"/>
+<view>------</view>
+
+<!-- 
+  关于wxml的导入有两种方式“
+    1.import导入：
+      1).主要是导入template
+      2).特点:不能进行递归导入
+    2. include引入：
+      1).将公共的wxml中的组件抽取到一个文件中
+      2).特点：不能导入template/wxs,可以进行递归导入
+ -->
+
+<include src="/wxml/end.wxml"/>

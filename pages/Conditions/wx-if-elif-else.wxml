@@ -1,0 +1,19 @@
+<!--pages/Conditions/wx-if-elif-else.wxml-->
+<view>----条件判断----</view>
+
+<!-- wx:if的使用 -->
+<view wx:if="{{isShow}}">哈哈哈</view>
+<button bindtap="handleSwitchShow" size="mini">切换显示</button>
+
+<!--微信：wx:elif/wx:else的使用  -->
+<input placeholder="请输入成绩" bindinput="handleInput" type="number"></input>
+<view wx:if="{{score >= 90}}">优秀</view>
+<view wx:elif="{{score >= 80}}">良好</view>
+<view wx:elif="{{score >= 60}}">及格</view>
+<view wx:else>不及格</view>
+
+
+<!-- hidden属性和wx:if的区别
+  hidden隐藏后，组件还是存在body中的，只是隐藏了   用于内置组件的频繁显示隐藏
+  wx:if隐藏后，不存在body中，在body中删除了，   用于内置组件的不频繁显示隐藏
+ -->

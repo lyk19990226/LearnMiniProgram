@@ -1,0 +1,7 @@
+
+<template name="abc">
+  <include src="/wxml/start.wxml"/>
+  <input placeholder="{{inputContent}}"></input>
+  <button size="mini">提交</button>
+  <include src="/wxml/end.wxml"/>
+</template>

@@ -1,0 +1,6 @@
+/* pages/Conditions/wx-if-elif-else.wxss */
+input {
+  border:1px solid #eee;
+  margin:10px;
+  padding:10px;
+}

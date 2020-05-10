@@ -1,0 +1,49 @@
+<view>wx:for的基本使用</view>
+<!--1.1 遍历字符串 -->
+<view wx:for="lyk" wx:key="this">{{item}}-{{index}}</view>
+
+<!-- 1.2遍历数组 -->
+<view wx:for="{{['西游记','梦幻西游','虹猫蓝兔七侠传']}}" wx:key="this">{{item}}-{{index}}</view>
+
+<!-- 1.3遍历对象 -->
+<view wx:for="{{obj}}" wx:key="this">{{item}}-{{index}}-{{key}}</view>
+
+<!-- 1.4遍历数字 -->
+<view wx:for="{{5}}" wx:key="this">{{item}}-{{index}}</view>
+
+<view>--------------------</view>
+
+
+<!-- 2.block标签 不是一个组件，在页面更新时不会被渲染，一般用到wx:if和wx:for时，我们都会用block标签进行包裹-->
+<!-- <block wx:if="{{true}}">
+  <button size="mini">按钮</button>
+  <view>呵呵</view>
+  <text>哈哈哈哈</text>
+</block>
+
+<view>--------------------</view>
+<block wx:for="{{3}}" wx:key="this">
+  <button>按钮</button>
+  <text>嘿嘿嘿</text>
+  <view>啦啦啦</view>
+</block> -->
+
+
+
+<!-- 3.item,index 起名字
+  wx:for-item   改item的名字
+  wx:for-index  改index的名字
+ -->
+
+<view wx:for="{{movies}}" wx:key="this" wx:for-item="movie" wx:for-index="i">{{movie}} - {{i}}</view>
+
+<block wx:for="{{nums}}" wx:key="this" wx:for-item="inner_item">
+  <block wx:for="{{inner_item}}" wx:key="this">
+    <view>{{item}}-{{index}}</view>
+  </block>
+</block>
+
+
+
+
+

@@ -1,0 +1,12 @@
+<!--pages/wxss/wxss.wxml-->
+<!-- 1.wxss中的单位：rpx
+  在iPhone6机型中 1px = 2rpx
+ -->
+<!-- 前端也需要进行配置尺寸的适配：em/rem/vw/vh -->
+<view class="box1"></view>
+<view class="box2"></view>
+
+<view class="content1">哈哈哈</view>
+<view class="content2">呵呵呵</view>
+
+<button class="btn">按钮</button>

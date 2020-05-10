@@ -1,0 +1,5 @@
+<template name="radio">
+<view>性别:</view>
+ 男<radio></radio>
+ 女<radio></radio>
+</template>

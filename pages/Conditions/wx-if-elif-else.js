@@ -1,11 +1,23 @@
-// pages/home/home.js
+// pages/Conditions/wx-if-elif-else.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    isShow:true,
+    score:70
+  },
+  handleSwitchShow() {
+    this.setData({
+      isShow:!this.data.isShow
+    })
+  },
+  handleInput(event) {
+    console.log(event)
+    this.setData({
+      score:event.detail.value
+    })
   },
 
   /**
