@@ -1,3 +1,59 @@
-<!--pages/home/home.wxml-->
-<text class="title">Hello Wrold</text>
-<button size="mini">按钮</button>
+<!-- 1.事件处理的回顾 -->
+<button bindtap="handleBtnClick" size="mini">按钮</button>
+<!-- 微信小程序1.5版本后，新增的监听事件的写法：提高可读性 -->
+<button bind:tap="handleBtnClick" size="mini">按钮1(1.5以后的新增写法)</button>
+<button catch:tap="handleBtnClick" size="mini">按钮：（监听点击事件：catch:tap 写法）</button>
+<button catchtap="handleBtnClick" size="mini">按钮：（监听点击事件：catchtap 写法）</button>
+
+<!-- 2.常用的一些事件 -->
+<view class="box"
+      bind:touchstart="handleTouchStart"
+      bind:touchmove="handleTouchMove"
+      bind:touchend="handleTouchEnd"
+      bind:tap="handleTap"
+      bind:longpress="handleLongPress"></view>
+
+<!-- 3.事件对象的分析 -->
+
+<!-- 3.1分析changedTouches和touches的区别
+    touches：触发事件时，屏幕上所有触摸点的集合
+    changedTouches:触发事件时，改变触摸点的集合
+ -->
+<button size="mini"
+        bind:tap="handleEventClick"
+        bind:touchend="handleEventEnd">事件对象</button>
+
+<!-- 3.2分析currentTarget和target的区别 -->
+<view class="outer" id="outer" bind:tap="handleOuter">
+外层view
+  <view class="inner" id="inner" bind:tap="handleInner">内层view</view>
+</view>
+
+<!-- 4.事件的传递参数 -->
+<view class="container">
+  <block wx:for="{{titles}}" wx:key="index">
+    <view class="item" 
+          bindtap="handleItemClick"
+          data-item="{{item}}"
+          data-index="{{index}}">{{item}}</view>
+  </block>
+</view>
+
+<!-- 5.事件冒泡和事件捕获 -->
+<!-- bind:一层层传递 -->
+
+ <view class="view1" capture-bind:tap="handleCaptureView1" bindtap="handleBindView1">1
+    <view class="view2" capture-bind:tap="handleCaptureView2" bindtap="handleBindView2">2
+       <view class="view3" capture-bind:tap="handleCaptureView3" bindtap="handleBindView3">3
+       </view>
+    </view>
+ </view>
+
+ <view>----------catch:阻止事件的进一步传递-----------</view>
+ <!-- catch:阻止事件的进一步传递 -->
+  <view class="view1" capture-bind:tap="handleCaptureView1" bindtap="handleBindView1">1
+    <view class="view2" capture-bind:tap="handleCaptureView2" catchtap="handleBindView2">2
+       <view class="view3" capture-bind:tap="handleCaptureView3" bindtap="handleBindView3">3
+       </view>
+    </view>
+ </view>
