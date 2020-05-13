@@ -1,0 +1,1 @@
+<view>当前计数：{{sel_counter}}</view>

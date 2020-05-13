@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  background-color: #fff;
+  height: 70rpx;
+}
+.item {
+  text-align: center;
+  flex:1;
+}
+.active {
+  color:#f46773;
+}
+.active .text {
+  border-bottom:6rpx solid #f46773;
+  padding:10rpx 12rpx;
+}

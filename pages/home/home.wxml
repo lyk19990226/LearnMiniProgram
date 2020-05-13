@@ -1,3 +1,64 @@
 <!--pages/home/home.wxml-->
-<text class="title">Hello Wrold</text>
-<button size="mini">按钮</button>
+<!-- <text class="title">Hello Wrold</text>
+<button size="mini">按钮1</button> -->
+
+<!-- 1.引用自定义组件
+       1.先在home.json文件中的"usingComponents": {
+        "key":"value"
+         //key：待会要用的自定义组件标签名
+         //vaule:自定义组件的路径
+       }中进行注册
+       2.使用自定义组件
+ -->
+ <my-cpn/>
+ <my-cpn></my-cpn>
+
+ 
+
+
+
+ <!-- 2.给自定义组件传递数据/样式 -->
+ <my-prop title="哈哈哈" titleclass="red"/>
+ <my-prop title="呵呵呵" titleclass="blue"/>
+ <my-prop title="嘿嘿嘿" titleclass="green"/>
+ <my-prop titleclass="yellow"/>
+
+<!-- 3.组件内部发出事件 -->
+<view>当前计数:{{counter}}</view>
+<my-event bind:increment="handleIncrement"/>
+
+<view>------------组件的小练习---------------</view>
+<!-- 4.组件的应用：小练习 -->
+<w-tab-control titles="{{['流行','新款','精选','潮流','名牌']}}"
+               bind:itemclick="handleTabClick"
+               data-name="{{name}}"/> 
+
+<view>---------</view>
+ <!--  5.在组件外部修改组件内部的数据，和调用组件内部的方法 -->
+ <button size="mini" bind:tap='handleIncrementCpn'>组件外部的按钮修改组件内部的数据：+20</button>
+ <my-sel class="sel-class" id="sel-id"/>
+
+ <!-- 6.插槽的使用:slot -->
+
+ <!-- 6.1，单个插槽的使用 -->
+<my-slot>
+  <button size="mini">我是插入的按钮</button>
+</my-slot>
+
+<my-slot>
+  <text>我是插入的文本</text>
+</my-slot>
+
+<my-slot>
+  <slider value='60'></slider><!-- 进度条内部组件   -->
+ </my-slot>
+
+ <!-- 6.2 多个插槽的使用 -->
+<!-- 注意事项：
+       1. 给每一个插槽取一个名字：用name属性
+       2. 必须在Component对象中添加一个选项：options -> multipleSlots:true -->
+ <my-mslot>
+   <button slot="slot2" size="mini">我是插入的按钮</button>
+   <slider slot="slot3"></slider>
+   <text slot="slot1">哈哈哈</text>
+ </my-mslot>
