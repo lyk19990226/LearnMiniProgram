@@ -1,3 +1,22 @@
 <!--pages/home/home.wxml-->
 <text class="title">Hello Wrold</text>
 <button size="mini">按钮</button>
+<view>------------</view>
+<!-- 1.Toast -->
+<button size="mini" bind:tap="handleShowToast">showToast</button>
+
+<!-- 2.显示对话框Modal -->
+<button size="mini" bind:tap="handleShowModal">showModal</button>
+
+<!-- 3.显示提示框showLoading 
+        注意
+              wx.showLoading 和 wx.showToast 同时只能显示一个
+              wx.showLoading 应与 wx.hideLoading 配对使用，否则loading提示框会一直显示，不会隐藏-->
+<button size="mini" bind:tap="handleShowLoading">showLoading</button>
+
+<!-- 4.显示操作菜单 -->
+<button size="mini" bind:tap="handleShowActionSheet">showActionSheet</button>
+
+<!-- 5.分享按钮 -->
+<button size="mini" open-type='share'>分享</button>
+
