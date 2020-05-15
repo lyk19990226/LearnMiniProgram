@@ -1,3 +1,23 @@
 <!--pages/home/home.wxml-->
 <text class="title">Hello Wrold</text>
 <button size="mini">按钮</button>
+<!-- 1.navigator进行页面跳转 -->
+<navigator url="/pages/detail/detail">跳转到详情页</navigator>
+
+<!-- 2.navigator的属性：opne-type -->
+<navigator open-type="redirect" url="/pages/detail/detail">跳转到详情页(open-type属性 = redirect)</navigator>
+
+<navigator open-type="switchTab" url="/pages/about/about">跳转到关于页(open-type属性 = switchTab)</navigator>
+<!-- 将所有页面关闭，只展示当前指定的url页面 -->
+<navigator open-type="reLaunch" url="/pages/detail/detail">跳转到详情页(open-type属性 = reLaunch)</navigator>
+
+
+
+<view>---------------------------------</view>
+<!-- 3.跳转过程中数据的传递 -->
+<navigator url="/pages/detail/detail?name=lyk&age=18&height=1.65">跳转到详情页</navigator>
+<view>点击我上面的 跳转详情页后 我会改变：{{title}}</view>
+
+
+<!-- 4.通过代码进行页面跳转 -->
+<button size="mini" bind:tap="handlePushDetail">跳转到详情页（代码实现）</button>
